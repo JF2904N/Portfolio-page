@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="page">
+        <h1>Portfolio</h1>
+        <div class="navigation">
+            <a class="active" href="#about">About<span></span></a>
+            <a href="#experience">Experience<span></span></a>
+            <a href="#projects">Projects<span></a>
+            <a href="#contact">Contact<span></span></a>
+        </div>
+        <div class="loader"></div>
+        
+        <div id="about" class="container a">
+            <div class="at ac">
+                <div class="left-side">
+                    <h3>Jonathan</h3>
+                    <img src="images/pfp.jpg" alt="Profile Photo" class="profile-photo">
+                </div>
+                <div class="right-side">
+                    <p>I am a third-year student majoring in Math and Computer Science,
+                        utilizing my 3 years of experience in learning and practicing
+                        development with different programming languages such as Python,
+                        Java, SQL, PowerBI in various projects. I am very interested in problem-
+                        solving, team collaborative and theoretical proof courses. Combine
+                        with my communication and interpersonal skills with an open mind to
+                        clients and colleagues. My goal is to increase both technical and soft
+                        skills, delivering exceptional results and exceeding goals for the
+                        company.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="experience" class="container b">
+            <div class="bt ac">
+                <div class="first-box">
+                    <h3>Data Architect</h3>
+                    <p>Collaborated with data integration teams for ETL processes and assist in data integration tasks through SSIS. 
+                        Gained proficiency in data management tools (SQL server, Azure Managed Instance) and analytical platforms(PowerBI).  
+                        Took initiative in developing a synthetic data masking system to improve data privacy and security (Python).</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="projects" class="container c">
+            <div class="ct ac">
+                <div class="project_list">
+                    <div class="p1">
+                        <h3>Data Masking</h3>
+                        <p>(SQL and Python)
+                            Pulls data from MSSQL then creates and instance of fake data on a csv that is then generated back into the MSSQL</p>
+                    </div>
+                    <div class="p2">
+                        <h3>Service Reservation Application</h3>
+                        <p>Simulated business scenario providing reservation services for travel and car rentals. Utilizing UML modelling for elevated class structure.</p>
+                    </div>
+                    <div class="p3">
+                        <h3>Task Manager</h3>
+                        <p>Utilizes user input on work assignments to organize it into a unique dataset organized by specific keys.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="contact" class="container d">
+            <div class="dt ac">
+                <section class="contact">
+                    <h2>Contact Me</h2>
+                    <form id="contactForm" method="POST" class="mx-auto my-5 shadow p-2">
+                        <div class="inputBox d-flex mb-1">
+                            <label class="mx-3" for="customer">Name:</label>
+                            <input
+                                type="text"
+                                class="mx-3 form-control"
+                                id="name"
+                                name="Name"
+                                list="names"
+                                required
+                            />
+                            <datalist id="customers">
+                                <!-- javascript will add options here -->
+                            </datalist>
+                        </div>
+                        <div class="inputBox d-flex mb-1">
+                            <label class="mx-3" for="phone">Email:</label>
+                            <input
+                                type="text"
+                                class="mx-3 form-control"
+                                id="email"
+                                name="Email"
+                                list="emails"
+                                required
+                            />
+                            <datalist id="phones">
+                                <!-- javascript will add options here -->
+                            </datalist>
+                        </div>
+                        <div class="inputBox d-flex mb-1">
+                            <label class="mx-3" for="address">Subject:</label>
+                            <input
+                                type="text"
+                                class="mx-3 form-control"
+                                id="subject"
+                                name="Subject"
+                                list="subjects"
+                                required
+                            />
+                            <datalist id="addresses">
+                                <!-- javascript will add options here -->
+                            </datalist>
+                        </div>
+                        <div class="inputBox d-flex mb-1">
+                            <label class="mx-3" for="price">Message:</label>
+                            <input
+                                type="text"
+                                class="mx-3 form-control"
+                                id="message"
+                                name="Message"
+                                list="messages"
+                                required
+                            />
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" value="Submit" class="btn btn-primary">
+                        </div>
+                    </form>
+                    <p id="responseMessage"></p> <!-- Response message placeholder -->
+                </section>
+            </div>  
+        </div>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

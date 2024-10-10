@@ -1,0 +1,341 @@
+/* General styles */
+html {
+  scroll-behavior: smooth; /* Enables smooth scroll transition */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, serif;
+  background-color: #f4f4f4;
+  font-size: 18px; /* Zooming in by increasing the base font size */
+  line-height: 1.8; /* Slightly increase line height for better readability */
+  background: linear-gradient(rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.5));
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 48px; /* Increased size for a zoomed-in effect */
+  color: #fff;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 1200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a bit more depth */
+  border-radius: 10px; /* Rounded edges for a polished look */
+  background-color: rgba(81, 80, 80, 0.637); /* Semi-transparent background for containers */
+}
+
+h3 {
+  margin-bottom: 3px;
+  font-size: 28px; /* Increased size for headings */
+}
+
+.right-side p {
+  margin-top: 85px;
+  font-size: 18px; /* Slightly larger for more readable text */
+  line-height: 1.8;
+  color: #333;
+}
+.first-box p {
+  font-size: 18px; /* Slightly larger for more readable text */
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Navigation Styles */
+.navigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: transparent; 
+  box-shadow: none; 
+}
+
+.navigation a {
+  position: relative;
+  font-size: 1.1em;
+  color: #bdb9b943;
+  text-decoration: none;
+  padding: 6px 20px;
+  transition: 0.5s;
+}
+
+.navigation a:hover {
+  color: #d4ce7b;
+}
+.navigation a span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-bottom: 2px solid #d4ce7b;
+  border-radius: 15px;
+  transform: scale(0) translateY(50px);
+  opacity: 0;
+  transition: 0.5s;
+}
+.navigation a:hover span {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+
+.loader {
+  display: none;
+}
+
+.profile-photo {
+  width: 100%; /* Make it responsive by using percentage */
+  max-width: 250px; /* Set a maximum size */
+  aspect-ratio: 1/1; /* Ensure the element remains a perfect square */
+  border-radius: 50%; /* This creates the circle */
+  display: block;
+  margin: 20px auto; /* Center the image horizontally */
+  object-fit: cover; /* Ensure the image covers the circular container */
+}
+
+
+/* Center content in Experience, Projects, and Contact sections */
+.left-side, .right-side, .bt, .ct, .dt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Ensures text is centered */
+}
+
+.right-side {
+  max-width: 600px;
+  padding: 0 40px;
+}
+
+.at {
+  display: flex;
+  flex-direction: auto; 
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-in-out;
+}
+.bt, .ct, .dt {
+  display: flex;
+  flex-direction: column; /* Ensure all content stacks vertically */
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-in-out;
+}
+
+.at:hover, .bt:hover, .ct:hover, .dt:hover {
+  background-color: #eaeaea; /* Darken on hover */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.project_list .p1, .project_list .p2, .project_list .p3, .bt .first-box {
+  background-color: beige;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center project text */
+  transition: background-color 0.3s ease;
+}
+
+.project_list .p1:hover, .project_list .p2:hover, .project_list .p3:hover, .bt .first-box:hover {
+  background-color: #d3c6a5; /* Darken background on hover */
+}
+
+/* Project list styles */
+.project_list div {
+  position: relative;
+  background-color: beige;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Align text to the left */
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.project_list h3 {
+  margin: 0;
+  font-size: 24px; /* Size for project name */
+}
+
+.project_list p {
+  margin: 0;
+  padding: 0;
+  transform: translateX(-100%); /* Initially hide the description */
+  white-space: normal; /* Prevents text from wrapping */
+  transition: transform 0.4s ease; /* Smooth sliding effect */
+  color: #333;
+  opacity: 0; /* Hide the description by default */
+}
+
+/* Hover effect on project boxes */
+.project_list div:hover {
+  background-color: #d3c6a5; /* Darken background on hover */
+}
+
+.project_list div:hover p {
+  transform: translateX(0); /* Slide the description in */
+  opacity: 1; /* Show the description */
+}
+
+
+
+/* Contact Form Enhancements */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Ensure form fields and text are centered */
+}
+
+.contact form .inputBox {
+  position: relative;
+  margin-bottom: 25px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.contact form .inputBox input, 
+.contact form .inputBox textarea {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+.contact form .inputBox input:hover, 
+.contact form .inputBox textarea:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.contact form input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact form input[type="submit"]:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 768px) {
+  .at, .bt, .ct, .dt {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .profile-photo {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .right-side {
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .navigation a {
+    padding: 15px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .right-side {
+    font-size: 16px;
+  }
+
+  .profile-photo {
+    width: 80%;
+  }
+
+  .navigation a {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .project_list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contact form .inputBox input, .contact form .inputBox textarea {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .contact form .inputBox label {
+    font-size: 14px;
+  }
+
+  .contact form .inputBox input[type="submit"] {
+    padding: 12px;
+  }
+}
+
+
+
+
+
+
